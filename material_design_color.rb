@@ -31,10 +31,10 @@ matched_colors = colors.select do |color|
 end
 
 items = matched_colors.map do |color|
-  arg = "#{color[:value]}"
+  arg = "\##{color[:value]}"
   uid = "#{color[:name]}"
   path = "images/colors/#{uid}.png"
-  title = "#{color[:name]}"
+  title = "#{color[:name].gsub!('_', ' ')}"
   subtitle = "Copy #{arg} to clipboard"
   item_xml({ arg: arg, uid: uid, path: path, title: title, subtitle: subtitle})
 end.join
