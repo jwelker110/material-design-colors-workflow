@@ -35,7 +35,7 @@ items = matched_colors.map do |color|
   uid = "#{color[:name]}"
   path = "images/colors/#{uid}.png"
   title = "#{color[:name].gsub!('_', ' ')}"
-  subtitle = "Copy #{arg} to clipboard"
+  subtitle = "#{arg}"
   item_xml({ arg: arg, uid: uid, path: path, title: title, subtitle: subtitle})
 end.join
 
